@@ -11,39 +11,34 @@ import {
 
 import "../../Layout.css";
 
-const Folder1 = () => {
+interface props {
+  setTest: any;
+}
+
+const Folder1 = ({ setTest }: props) => {
   const nav = useNavigate();
   const [isFull, setIsFull] = useState<boolean>(false);
   const [todo, setTodo] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const location = useLocation();
   return (
-    <SwitchTransition>
-      <CSSTransition
-        key={location.pathname}
-        timeout={300}
-        classNames="page"
-        unmountOnExit
-      >
-        <Div>
-          <Box isFull={isFull}>
-            <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
-              <button onClick={() => nav(-1)}>닫기</button>
-              <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
-            </Header>
+    <Div>
+      <Box isFull={isFull}>
+        <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
+          <button onClick={() => setTest(false)}>닫기</button>
+          <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
+        </Header>
 
-            <input onChange={(e) => setInputValue(e.target.value)}></input>
-            <button onClick={() => setTodo((prev) => [...prev, inputValue])}>
-              dddd
-            </button>
+        <input onChange={(e) => setInputValue(e.target.value)}></input>
+        <button onClick={() => setTodo((prev) => [...prev, inputValue])}>
+          dddd
+        </button>
 
-            {todo.map((todo, index) => (
-              <Test>{todo}</Test>
-            ))}
-          </Box>
-        </Div>
-      </CSSTransition>
-    </SwitchTransition>
+        {todo.map((todo, index) => (
+          <Test>{todo}</Test>
+        ))}
+      </Box>
+    </Div>
   );
 };
 
@@ -57,7 +52,7 @@ const Test = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #7e7e7e73;
+  /* background-color: #7e7e7e73; */
 
   position: absolute;
   top: 0;

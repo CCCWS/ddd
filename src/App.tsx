@@ -26,21 +26,22 @@ function App() {
       </TransitionGroup> */}
       <GlobalStyle />
 
-      <SwitchTransition>
+      {/* <SwitchTransition>
         <CSSTransition
           key={location.pathname}
           timeout={300}
           classNames="page"
           unmountOnExit
         >
-          <Routes>
-            <Route path={"/"} element={<Main />}>
-              <Route path={"/test1"} element={<Folder1 />} />
-            </Route>
-            <Route path={"/test2"} element={<Main />} />
-          </Routes>
         </CSSTransition>
-      </SwitchTransition>
+      </SwitchTransition> */}
+
+      <Routes>
+        <Route path={"/"} element={<Main />}>
+          {/* <Route path={"/test1"} element={<Folder1 />} /> */}
+        </Route>
+        <Route path={"/test2"} element={<Main />} />
+      </Routes>
     </>
   );
 }
