@@ -6,11 +6,9 @@ const Main = () => {
   const nav = useNavigate();
   const { pathname } = useLocation();
 
-  console.log(pathname);
-
   return (
     <Div>
-      <button onClick={() => nav("test1")}>ddd</button>
+      <button onClick={() => nav("/test1")}>ddd</button>
       <Footer></Footer>
       <Outlet />
     </Div>
@@ -22,7 +20,7 @@ const Div = styled.div`
   height: 100vh;
   background-color: wheat;
 
-  position: relative;
+  position: absolute;
 `;
 
 const Footer = styled.div`

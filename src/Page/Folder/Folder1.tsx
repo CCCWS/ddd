@@ -1,21 +1,58 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import styled from "styled-components";
+import {
+  TransitionGroup,
+  CSSTransition,
+  Transition,
+  SwitchTransition,
+} from "react-transition-group";
+
+import "../../Layout.css";
 
 const Folder1 = () => {
   const nav = useNavigate();
   const [isFull, setIsFull] = useState<boolean>(false);
+  const [todo, setTodo] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>("");
+  const location = useLocation();
   return (
-    <Div>
-      <Box isFull={isFull}>
-        <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
-          <button onClick={() => nav(-1)}>닫기</button>
-          <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
-        </Header>
-      </Box>
-    </Div>
+    <SwitchTransition>
+      <CSSTransition
+        key={location.pathname}
+        timeout={300}
+        classNames="page"
+        unmountOnExit
+      >
+        <Div>
+          <Box isFull={isFull}>
+            <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
+              <button onClick={() => nav(-1)}>닫기</button>
+              <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
+            </Header>
+
+            <input onChange={(e) => setInputValue(e.target.value)}></input>
+            <button onClick={() => setTodo((prev) => [...prev, inputValue])}>
+              dddd
+            </button>
+
+            {todo.map((todo, index) => (
+              <Test>{todo}</Test>
+            ))}
+          </Box>
+        </Div>
+      </CSSTransition>
+    </SwitchTransition>
   );
 };
+
+const Test = styled.div`
+  width: 100px;
+  height: 30px;
+  background-color: gray;
+  margin-bottom: 10px;
+`;
 
 const Div = styled.div`
   width: 100%;
