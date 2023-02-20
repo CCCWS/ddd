@@ -9,7 +9,11 @@ import {
 import GlobalStyle from "./GlobalStyle";
 
 import Main from "@Page/Main";
-import Folder1 from "@Page/Folder/Folder1";
+import About from "@Page/About";
+import Project from "@Page/Project";
+import Header from "@Component/Header";
+
+import RouteTransition from "@Component/RouteTransition";
 
 import "./Layout.css";
 
@@ -25,6 +29,7 @@ function App() {
         ></CSSTransition>
       </TransitionGroup> */}
       <GlobalStyle />
+      <Header />
 
       {/* <SwitchTransition>
         <CSSTransition
@@ -36,12 +41,13 @@ function App() {
         </CSSTransition>
       </SwitchTransition> */}
 
-      <Routes>
-        <Route path={"/"} element={<Main />}>
-          {/* <Route path={"/test1"} element={<Folder1 />} /> */}
-        </Route>
-        <Route path={"/test2"} element={<Main />} />
-      </Routes>
+      <RouteTransition location={location}>
+        <Routes>
+          <Route path={"/"} element={<Main />} />
+          <Route path={"/about"} element={<About />} />
+          <Route path={"/project"} element={<Project />} />
+        </Routes>
+      </RouteTransition>
     </>
   );
 }

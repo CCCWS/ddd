@@ -11,21 +11,27 @@ import {
 
 import "../../Layout.css";
 
+import RouteTransition from "@Component/RouteTransition";
+
 interface props {
   setTest: any;
 }
 
-const Folder1 = ({ setTest }: props) => {
+const Folder1 = () => {
   const nav = useNavigate();
   const [isFull, setIsFull] = useState<boolean>(false);
   const [todo, setTodo] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const location = useLocation();
+  const { state } = useLocation();
+
+  console.log(state);
+
   return (
     <Div>
       <Box isFull={isFull}>
         <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
-          <button onClick={() => setTest(false)}>닫기</button>
+          <button onClick={() => nav(-1)}>닫기</button>
           <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
         </Header>
 
