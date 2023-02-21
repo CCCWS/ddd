@@ -1,11 +1,9 @@
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
-import "../Layout.css";
+import "@"
 
 const RouteTransition = ({ location, children }: any) => {
   const pathname = location.pathname;
-
- 
 
   return (
     <TransitionGroup>

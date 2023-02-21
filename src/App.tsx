@@ -5,8 +5,10 @@ import {
   CSSTransition,
   SwitchTransition,
 } from "react-transition-group";
+import { ThemeProvider } from "styled-components";
 
-import GlobalStyle from "./GlobalStyle";
+import GlobalStyle from "./Style/GlobalStyle";
+import theme from "./Style/Theme";
 
 import Main from "@Page/Main";
 import About from "@Page/About";
@@ -15,19 +17,12 @@ import Header from "@Component/Header";
 
 import RouteTransition from "@Component/RouteTransition";
 
-import "./Layout.css";
+import "./Style/Layout.css";
 
 function App() {
   const location = useLocation();
   return (
-    <>
-      {/* <TransitionGroup className="transitions-wrapper">
-        <CSSTransition
-          key={location.pathname}
-          classNames={"right"}
-          timeout={300}
-        ></CSSTransition>
-      </TransitionGroup> */}
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
 
@@ -48,7 +43,7 @@ function App() {
           <Route path={"/project"} element={<Project />} />
         </Routes>
       </RouteTransition>
-    </>
+    </ThemeProvider>
   );
 }
 
