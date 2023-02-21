@@ -1,17 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Page, PageDiv } from "@Style/PageStyle";
+
 const Project = () => {
-  return <Div>ProjectList</Div>;
+  return (
+    <Page>
+      <PageDiv></PageDiv>
+    </Page>
+  );
 };
-
-const Div = styled.div`
-  width: 100vw;
-  height: 300vh;
-  background-color: wheat;
-  overflow-x: hidden;
-
-  /* position: absolute; */
-`;
 
 export default Project;
