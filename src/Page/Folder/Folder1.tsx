@@ -2,58 +2,31 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import styled from "styled-components";
-import {
-  TransitionGroup,
-  CSSTransition,
-  Transition,
-  SwitchTransition,
-} from "react-transition-group";
+import "@Style/Modal.css";
 
-import "../../Layout.css";
-
-import RouteTransition from "@Component/RouteTransition";
+import { ProjectType } from "@Data/ProjectList";
 
 interface props {
-  setTest: any;
+  projectData: ProjectType | null;
+  setOnModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Folder1 = () => {
-  const nav = useNavigate();
+const Folder1 = ({ projectData, setOnModalOpen }: props) => {
   const [isFull, setIsFull] = useState<boolean>(false);
-  const [todo, setTodo] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
-  const location = useLocation();
-  const { state } = useLocation();
-
-  console.log(state);
 
   return (
     <Div>
       <Box isFull={isFull}>
         <Header onDoubleClick={() => setIsFull((prev) => !prev)}>
-          <button onClick={() => nav(-1)}>닫기</button>
+          <button onClick={() => setOnModalOpen(false)}>닫기</button>
           <button onClick={() => setIsFull((prev) => !prev)}>확대</button>
         </Header>
-
-        <input onChange={(e) => setInputValue(e.target.value)}></input>
-        <button onClick={() => setTodo((prev) => [...prev, inputValue])}>
-          dddd
-        </button>
-
-        {todo.map((todo, index) => (
-          <Test>{todo}</Test>
-        ))}
+        {projectData && projectData.title}
       </Box>
     </Div>
   );
 };
-
-const Test = styled.div`
-  width: 100px;
-  height: 30px;
-  background-color: gray;
-  margin-bottom: 10px;
-`;
 
 const Div = styled.div`
   width: 100%;
@@ -71,11 +44,15 @@ const Div = styled.div`
 const Box = styled.div<{ isFull: boolean }>`
   width: ${(props) => (props.isFull ? "100%" : "70%")};
   height: ${(props) => (props.isFull ? "100%" : "70%")};
-  background-color: white;
-  border-radius: ${(props) => (props.isFull ? "0" : "20px")};
-  overflow: hidden;
 
-  transition: 0.5s;
+  background-color: white;
+  border-radius: ${(props) => (props.isFull ? "0" : "10px")};
+
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+
+  z-index: 9999;
 `;
 
 const Header = styled.div`

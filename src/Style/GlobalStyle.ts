@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
 body{
     margin: 0;
     overflow-x: hidden;
-    overflow: overlay;
 }
 
 ::-webkit-scrollbar {

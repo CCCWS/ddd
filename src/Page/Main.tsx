@@ -10,8 +10,9 @@ import {
 
 import Folder1 from "./Folder/Folder1";
 import Footer from "@Component/Footer";
-import { Page, PageDiv } from "@Style/PageStyle";
+import Test from "./Test";
 
+import { Page, PageDiv } from "@Style/PageStyle";
 import "@Style/Layout.css";
 
 const Main = () => {
@@ -27,6 +28,7 @@ const Main = () => {
         )}
       </TransitionGroup> */}
       {/* <Button>TEST</Button> */}
+      <Test></Test>
       <PageDiv></PageDiv>
       {/* <Footer /> */}
     </Page>
