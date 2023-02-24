@@ -45,7 +45,7 @@ const Box = styled.div<{ isFull: boolean }>`
   width: ${(props) => (props.isFull ? "100%" : "70%")};
   height: ${(props) => (props.isFull ? "100%" : "70%")};
 
-  background-color: white;
+  /* background-color: white; */
   border-radius: ${(props) => (props.isFull ? "0" : "10px")};
 
   overflow: hidden;
@@ -53,6 +53,8 @@ const Box = styled.div<{ isFull: boolean }>`
   transition: 0.3s;
 
   z-index: 9999;
+
+  background: linear-gradient(to right, #859398, #283048);
 `;
 
 const Header = styled.div`

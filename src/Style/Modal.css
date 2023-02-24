@@ -19,3 +19,26 @@
   transform: scale(0.8);
   transition: 0.3s;
 }
+
+.blades div:nth-child(4) {
+  -webkit-transform: rotate(288deg) translateY(5px);
+  transform: rotate(288deg) translateY(5px);
+}
+.blades div:nth-child(5) {
+  -webkit-transform: rotate(360deg) translateY(5px);
+  transform: rotate(360deg) translateY(5px);
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
