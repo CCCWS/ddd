@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Page, PageDiv } from "@Style/PageStyle";
 import { ProjectList, ProjectType } from "@Data/ProjectList";
 import Folder1 from "./Folder/Folder1";
+import PageScroll from "@Component/PageScroll";
 
 const Project = () => {
   const [onModalOpen, setOnModalOpen] = useState<boolean>(false);
@@ -17,26 +18,28 @@ const Project = () => {
 
   return (
     <Page>
-      <ProjectListBox>
-        {ProjectList.map((data, index) => (
-          <ProjectIcon
-            key={index}
-            onClick={() => onClickProject(data)}
-            projectTitle={data.title}
-          />
-        ))}
-      </ProjectListBox>
+      <PageScroll delay={500} point={true}>
+        <ProjectListBox>
+          {ProjectList.map((data, index) => (
+            <ProjectIcon
+              key={index}
+              onClick={() => onClickProject(data)}
+              projectTitle={data.title}
+            />
+          ))}
+        </ProjectListBox>
 
-      <TransitionGroup>
-        {onModalOpen && (
-          <CSSTransition in={true} classNames="modal" timeout={500}>
-            <Folder1
-              projectData={onModalData}
-              setOnModalOpen={setOnModalOpen}
-            ></Folder1>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+        <TransitionGroup>
+          {onModalOpen && (
+            <CSSTransition in={true} classNames="modal" timeout={500}>
+              <Folder1
+                projectData={onModalData}
+                setOnModalOpen={setOnModalOpen}
+              ></Folder1>
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      </PageScroll>
     </Page>
   );
 };
