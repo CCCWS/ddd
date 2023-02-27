@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 //overscroll-behavior: contain;
-//스마트폰 사용시 아래로 스와이프하여 새로고침 방지
+
 
 interface Props {
   children: React.ReactNode[];
@@ -77,7 +77,9 @@ const PageScroll = ({ children, point, delay }: Props) => {
     >
       <div>
         {children.map((children, index) => (
-          <Page key={index}>{children}</Page>
+          <Page key={index} currLocation={location === index}>
+            {children}
+          </Page>
         ))}
       </div>
 
@@ -103,17 +105,22 @@ const Div = styled.div<{ location: number }>`
   flex-direction: column;
   overflow: hidden;
   position: relative;
+
   & > :first-child {
     width: inherit;
     height: inherit;
-    transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s;
-    transform: ${(props) => `translateY(-${props.location}00%)`};
+    /* transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s; */
+    /* transform: ${(props) => `translateY(-${props.location}00%)`}; */
   }
 `;
 
-const Page = styled.div`
+const Page = styled.div<{ currLocation: boolean }>`
   width: inherit;
   height: inherit;
+  position: absolute;
+
+  opacity: ${(props) => (props.currLocation ? "1" : "0")};
+  transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s;
 `;
 
 const PointBox = styled.div`

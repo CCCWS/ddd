@@ -33,7 +33,7 @@ const Waves = styled.div<{ img: ImageData }>`
   background-size: 1000px 100px; */
 
   div {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;

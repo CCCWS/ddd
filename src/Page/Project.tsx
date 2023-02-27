@@ -6,6 +6,7 @@ import { Page, PageDiv } from "@Style/PageStyle";
 import { ProjectList, ProjectType } from "@Data/ProjectList";
 import Folder1 from "./Folder/Folder1";
 import PageScroll from "@Component/PageScroll";
+import ProjectDetail from "@Component/ProjectDetail";
 
 const Project = () => {
   const [onModalOpen, setOnModalOpen] = useState<boolean>(false);
@@ -18,39 +19,39 @@ const Project = () => {
 
   return (
     <Page>
-      <PageScroll delay={500} point={true}>
-        <ProjectListBox>
-          {ProjectList.map((data, index) => (
-            <ProjectIcon
-              key={index}
-              onClick={() => onClickProject(data)}
-              projectTitle={data.title}
-            />
-          ))}
-        </ProjectListBox>
-
-        <TransitionGroup>
-          {onModalOpen && (
-            <CSSTransition in={true} classNames="modal" timeout={500}>
-              <Folder1
-                projectData={onModalData}
-                setOnModalOpen={setOnModalOpen}
-              ></Folder1>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
+      <PageScroll delay={300} point={true}>
+        {ProjectList.map((data, index) => (
+          // <ProjectListBox key={index}>
+          //   <ProjectIcon
+          //     onClick={() => onClickProject(data)}
+          //     projectTitle={data.title}
+          //   />
+          // </ProjectListBox>
+          <ProjectDetail key={index} data={data}></ProjectDetail>
+        ))}
       </PageScroll>
+
+      <TransitionGroup>
+        {onModalOpen && (
+          <CSSTransition in={true} classNames="modal" timeout={500}>
+            <Folder1
+              projectData={onModalData}
+              setOnModalOpen={setOnModalOpen}
+            ></Folder1>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
     </Page>
   );
 };
 
 const ProjectListBox = styled.div`
-  width: 100%;
+  /* width: 100%;
   height: 700px;
 
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 `;
 
 const ProjectIcon = styled.div<{ projectTitle: string }>`
