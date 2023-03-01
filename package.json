@@ -1,4 +1,5 @@
 {
+  "homepage": "https://cws.portfolio.io/ddd/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-transition-group": "^4.4.5",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-app-alias": "^2.2.2",
     "react-dom": "^18.2.0",
@@ -26,7 +28,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
