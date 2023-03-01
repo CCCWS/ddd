@@ -1,11 +1,29 @@
+import {
+  SkillType,
+  javascript,
+  css,
+  html,
+  typescript,
+  react,
+  redux,
+  styled_components,
+  nodeJs,
+  express,
+  axios,
+  mongoDB,
+  s3,
+  ec2,
+  firebase,
+} from "./SkillList";
+
 export interface ProjectType {
   title: string;
   description: string;
   purpose: string;
   image: string[];
-  skill: string[];
+  skill: SkillType[];
   repositoryUrl: string;
-  deploy?: string;
+  deploy?: SkillType;
   deployUrl?: string;
   etc?: string[];
 }
@@ -19,17 +37,17 @@ export const ProjectList: ProjectType[] = [
       "클라이언트 뿐만 아니라 서버까지 구현함으로써 하나의 완성된 사이트",
     image: [""],
     skill: [
-      "REACT",
-      "REACT-REDUX",
-      "REACT-ROUTER-DOM",
-      "STYLED-COMPONENTS",
-      "AXIOS",
-      "EXPRSS",
-      "MONGO DB",
-      "AWS S3",
+      react,
+      redux,
+      styled_components,
+      axios,
+      nodeJs,
+      express,
+      mongoDB,
+      s3,
     ],
     repositoryUrl: "https://github.com/CCCWS/react-shopping-app",
-    deploy: "AWS",
+    deploy: ec2,
     deployUrl: "www.test.test",
     etc: ["반응형", "다크모드", "서버"],
   },
@@ -40,9 +58,9 @@ export const ProjectList: ProjectType[] = [
       "TMDB의 영화 데이터를 API요청하고 응답받은 데이터를 가공하여 사용합니다. 영화 및 TV시리즈의 상세 정보와 카테고리별 분류, 키워드를 조합한 상세 검색, LocalStorage를 사용하여 조회내역 및 즐겨찾기 기능을 제공합니다.",
     purpose: "요청한 데이터를 보기좋게 가공",
     image: [""],
-    skill: ["REACT", "REACT-ROUTER-DOM", "CSS", "ANTD"],
+    skill: [react, css],
     repositoryUrl: "https://github.com/CCCWS/react-movie-app",
-    deploy: "Firebase",
+    deploy: firebase,
     deployUrl: "https://cws-react-movie-ae030.web.app/",
     etc: ["반응형", "API"],
   },
@@ -53,9 +71,9 @@ export const ProjectList: ProjectType[] = [
       "OpenAi의 학습된 데이터를 기반으로 대화를 주고 받을수 있습니다. 한글 전송시 다소 매끄럽지 못한 상황이 발생하여 NAVER PAPAGO API를 사용하여 번역하여 메세지가 전송됩니다.",
     purpose: "실제 메신저와 유사하게 구성",
     image: [""],
-    skill: ["REACT", "TYPESCRIPT", "STYLED-COMPONENTS", "AXIOS"],
+    skill: [react, typescript, styled_components, axios],
     repositoryUrl: "https://github.com/CCCWS/react-aichat",
-    deploy: "Firebase",
+    deploy: ec2,
     deployUrl: "https://cws-react-movie-ae030.web.app/",
     etc: ["API"],
   },
@@ -65,7 +83,16 @@ export const ProjectList: ProjectType[] = [
     description: "자주 사용되는 컴포넌트를 재사용이 용이하게 개량하였습니다.",
     purpose: "높은 재사용성과 쉬운 사용법으로 누구나 사용",
     image: [""],
-    skill: ["REACT", "STYLED-COMPONENTS", "TYPESCRIPT"],
+    skill: [react, typescript, styled_components],
     repositoryUrl: "https://github.com/CCCWS/react-component",
+  },
+
+  {
+    title: "바닐라JS Todo List",
+    description: "자주 사용되는 컴포넌트를 재사용이 용이하게 개량하였습니다.",
+    purpose: "자바스크립트, html, css 기초학습",
+    image: [""],
+    skill: [javascript, html, css],
+    repositoryUrl: "https://github.com/CCCWS/vanillaJS",
   },
 ];

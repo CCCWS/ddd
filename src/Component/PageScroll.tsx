@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 //overscroll-behavior: contain;
 
-
 interface Props {
   children: React.ReactNode[];
   point?: boolean;
@@ -99,28 +98,29 @@ const PageScroll = ({ children, point, delay }: Props) => {
 };
 
 const Div = styled.div<{ location: number }>`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: hidden;
   position: relative;
 
   & > :first-child {
     width: inherit;
     height: inherit;
-    /* transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s; */
-    /* transform: ${(props) => `translateY(-${props.location}00%)`}; */
+
+    transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+    transform: ${(props) => `translateY(-${props.location}00%)`};
   }
 `;
 
 const Page = styled.div<{ currLocation: boolean }>`
   width: inherit;
   height: inherit;
-  position: absolute;
 
-  opacity: ${(props) => (props.currLocation ? "1" : "0")};
-  transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s;
+  /* position: absolute; */
+  /* opacity: ${(props) => (props.currLocation ? "1" : "0")};
+  transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s; */
 `;
 
 const PointBox = styled.div`
@@ -136,8 +136,10 @@ const PointBox = styled.div`
 
 const Point = styled.div<{ location: boolean }>`
   transition: all ease 0.5s;
-  background-color: ${(props) => (props.location ? "black" : "white")};
-  border: 1px solid gray;
+  /* background-color: ${(props) => (props.location ? "black" : "white")}; */
+  background-color: white;
+  transform: ${(props) => (props.location ? "scale(1.5)" : "scale(0.5)")};
+  /* border: 1px solid gray; */
   border-radius: 30px;
   width: 10px;
   height: 10px;

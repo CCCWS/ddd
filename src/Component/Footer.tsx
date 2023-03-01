@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import waveImg from "@Data/wave.png";
+import waveImg from "@Data/image/wave.png";
 
 const Footer = () => {
   return (
@@ -37,9 +37,9 @@ const Waves = styled.div<{ img: ImageData }>`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 60px;
     background: ${(props) => `url(${props.img})`};
-    background-size: 1000px 100px;
+    background-size: 1000px 60px;
   }
 
   & > :first-child {
