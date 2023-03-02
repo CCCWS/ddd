@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe6a23ff.css",
-    "main.js": "/static/js/main.9b9b9978.js",
-    "static/media/react.png": "/static/media/react.ed78a572ed82617b2da7.png",
-    "static/media/firebase.png": "/static/media/firebase.7711986393374f6cb46d.png",
-    "static/media/github.png": "/static/media/github.69ffd9cd5a846c976177.png",
-    "static/media/s3.png": "/static/media/s3.3a9066ffdaff42d8c2eb.png",
-    "static/media/redux.png": "/static/media/redux.1edba70acbe0a2484e24.png",
-    "static/media/styled_components.png": "/static/media/styled_components.186b514d3f4ae897e934.png",
-    "static/media/express.png": "/static/media/express.548f1cfd65ae2d062126.png",
-    "static/media/javascript.png": "/static/media/javascript.fd3b01d53b3fc7d7d35b.png",
-    "static/media/html.png": "/static/media/html.63f56ceb1bec6af9c41d.png",
-    "static/media/nodejs.png": "/static/media/nodejs.c580880cda32187e07e1.png",
-    "static/media/visual_studio_code.png": "/static/media/visual_studio_code.a6a1c869b26d2484d25d.png",
-    "index.html": "/index.html",
-    "main.fe6a23ff.css.map": "/static/css/main.fe6a23ff.css.map",
-    "main.9b9b9978.js.map": "/static/js/main.9b9b9978.js.map"
+    "main.css": "/ddd/static/css/main.fe6a23ff.css",
+    "main.js": "/ddd/static/js/main.fdedb9cc.js",
+    "static/media/react.png": "/ddd/static/media/react.ed78a572ed82617b2da7.png",
+    "static/media/firebase.png": "/ddd/static/media/firebase.7711986393374f6cb46d.png",
+    "static/media/github.png": "/ddd/static/media/github.69ffd9cd5a846c976177.png",
+    "static/media/s3.png": "/ddd/static/media/s3.3a9066ffdaff42d8c2eb.png",
+    "static/media/redux.png": "/ddd/static/media/redux.1edba70acbe0a2484e24.png",
+    "static/media/styled_components.png": "/ddd/static/media/styled_components.186b514d3f4ae897e934.png",
+    "static/media/express.png": "/ddd/static/media/express.548f1cfd65ae2d062126.png",
+    "static/media/javascript.png": "/ddd/static/media/javascript.fd3b01d53b3fc7d7d35b.png",
+    "static/media/html.png": "/ddd/static/media/html.63f56ceb1bec6af9c41d.png",
+    "static/media/nodejs.png": "/ddd/static/media/nodejs.c580880cda32187e07e1.png",
+    "static/media/visual_studio_code.png": "/ddd/static/media/visual_studio_code.a6a1c869b26d2484d25d.png",
+    "index.html": "/ddd/index.html",
+    "main.fe6a23ff.css.map": "/ddd/static/css/main.fe6a23ff.css.map",
+    "main.fdedb9cc.js.map": "/ddd/static/js/main.fdedb9cc.js.map"
   },
   "entrypoints": [
     "static/css/main.fe6a23ff.css",
-    "static/js/main.9b9b9978.js"
+    "static/js/main.fdedb9cc.js"
   ]
 }
