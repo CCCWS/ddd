@@ -13,6 +13,7 @@ import {
   mongoDB,
   s3,
   ec2,
+  github_page,
   firebase,
 } from "./SkillList";
 
@@ -79,6 +80,17 @@ export const ProjectList: ProjectType[] = [
   },
 
   {
+    title: "포트폴리오",
+    description: "프로젝트 소개를 위한 포트폴리오 사이트입니다.",
+    purpose: "프로젝트 소개",
+    image: [""],
+    skill: [react, typescript, styled_components],
+    repositoryUrl: "https://github.com/CCCWS/ddd",
+    deploy: github_page,
+    deployUrl: "https://cws-react-movie-ae030.web.app/",
+  },
+
+  {
     title: "컴포넌트 모음",
     description: "자주 사용되는 컴포넌트를 재사용이 용이하게 개량하였습니다.",
     purpose: "높은 재사용성과 쉬운 사용법으로 누구나 사용",
@@ -88,7 +100,7 @@ export const ProjectList: ProjectType[] = [
   },
 
   {
-    title: "바닐라JS Todo List",
+    title: "Todo List",
     description: "자주 사용되는 컴포넌트를 재사용이 용이하게 개량하였습니다.",
     purpose: "자바스크립트, html, css 기초학습",
     image: [""],
