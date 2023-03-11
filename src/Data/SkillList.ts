@@ -17,6 +17,7 @@ import s3_Img from "@Data/icon/s3.png";
 import ec2_Img from "@Data/icon/ec2.png";
 import firebase_Img from "@Data/icon/firebase.png";
 import github_Img from "@Data/icon/github.png";
+import netlify_Img from "@Data/icon/netlify.png";
 
 import visual_studio_code_Img from "@Data/icon/visual_studio_code.png";
 
@@ -98,6 +99,11 @@ export const firebase: SkillType = {
 export const github_page: SkillType = {
   name: "Github Page",
   img: github_Img,
+};
+
+export const netlify: SkillType = {
+  name: "Netlify",
+  img: netlify_Img,
 };
 
 export const visual_studio_code: SkillType = {

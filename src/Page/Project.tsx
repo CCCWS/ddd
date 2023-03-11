@@ -31,16 +31,11 @@ const Project = () => {
         ))}
       </PageScroll>
 
-      <TransitionGroup>
-        {onModalOpen && (
-          <CSSTransition in={true} classNames="modal" timeout={500}>
-            <Folder1
-              projectData={onModalData}
-              setOnModalOpen={setOnModalOpen}
-            ></Folder1>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      {/* <Folder1
+        onModalOpen={onModalOpen}
+        projectData={onModalData}
+        setOnModalOpen={setOnModalOpen}
+      ></Folder1> */}
     </Page>
   );
 };

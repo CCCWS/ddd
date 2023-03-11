@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import styled from "styled-components";
 import "@Style/Modal.css";
@@ -31,7 +32,7 @@ const Folder1 = ({ projectData, setOnModalOpen }: props) => {
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  /* background-color: #7e7e7e73; */
+  /* background-color: red; */
 
   position: absolute;
   top: 0;

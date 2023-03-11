@@ -25,7 +25,7 @@ const Div = styled.div`
 
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1;
 `;
 
 const StyledLink = styled(NavLink)`
