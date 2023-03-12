@@ -86,13 +86,13 @@ const Title = styled.div`
   &:hover {
     ${TTest} {
       opacity: 1;
+      background-color: red;
     }
   }
 `;
 
 const Div = styled.div`
   /* padding: 50px; */
-  background-color: gray;
   width: 100%;
   height: 100%;
   position: relative;

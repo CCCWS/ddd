@@ -29,7 +29,7 @@ const Main = () => {
       </TransitionGroup> */}
       {/* <Button>TEST</Button> */}
       <Test></Test>
-      <PageDiv></PageDiv>
+      {/* <PageDiv></PageDiv> */}
       {/* <Footer /> */}
     </Page>
   );
