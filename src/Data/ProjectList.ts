@@ -18,21 +18,16 @@ import {
   firebase,
 } from "./SkillList";
 
-import shoppingImg from "@Data/pageImage/shopping/shopping_main_pc.png";
-
-import movieImg from "@data/pageImage/movie/pc/movie_detail_pc_1.png";
-
-import aiImg from "@Data/pageImage/ai/mobile/ai_korean.png";
-
-import memoImg from "@Data/pageImage/memo/pc/memo_pc.png";
-
-import todoImg from "@Data/pageImage/todo/todoList_web.png";
+import shoppingImg from "@Data/PageImage/shopping_main_pc.PNG";
+import aiImg from "@Data/PageImage/ai_main.PNG";
+import memoImg from "@Data/PageImage/memo_pc.PNG";
+import movieImg from "@Data/PageImage/movie_detail_pc_1.PNG";
+import todoImg from "@Data/PageImage/todoList_web.PNG";
 
 export interface ProjectType {
   title: string;
   description: string;
   // purpose: string;
-  // image: string[];
   image: string;
   skill: SkillType[];
   repositoryUrl: string;
@@ -97,7 +92,7 @@ export const ProjectList: ProjectType[] = [
     title: "포트폴리오",
     description: "프로젝트 소개를 위한 포트폴리오 사이트입니다.",
     // purpose: "프로젝트 소개",
-    image: shoppingImg,
+    image: movieImg,
     skill: [react, typescript, styled_components],
     repositoryUrl: "https://github.com/CCCWS/ddd",
     deploy: github_page,
